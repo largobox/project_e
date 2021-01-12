@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "module": "es6",
+    "target": "es5",
+    "jsx": "react",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      // client
+      "api/*": ["client/api/*"],
+      "component/*": ["client/component/*"],
+      "helper/*": ["client/helper/*"],
+      "core/*": ["client/component/core/*"],
+      "page/*": ["client/app/page/*"],
+      "layout/*": ["client/layout/*"],
+      "type": ["client/type/index.ts"],
+      "store": ["client/app/store.ts"],
+      // server
+      "controller/*": ["server/controller/*"]
+    }
+  }
+}
