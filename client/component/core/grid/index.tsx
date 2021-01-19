@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Pagination from './pagination'
 import Header, { HeaderItemType } from './header'
 import { Box } from '@material-ui/core'
@@ -30,6 +30,10 @@ const GridComponent = (props: Props): JSX.Element => {
     } = props
     const [page, setPage] = useState(1)
 
+    useEffect(() => {
+        repeatQuery({ page, limit: 10 })
+    }, [page])
+
     return (
         <React.Fragment>
             <Box mb={1}>
@@ -37,7 +41,6 @@ const GridComponent = (props: Props): JSX.Element => {
                     value={page}
                     setValue={setPage}
                     count={data.count}
-                    onChange={repeatQuery}
                 />
             </Box>
             <Header items={headers} />
@@ -51,7 +54,6 @@ const GridComponent = (props: Props): JSX.Element => {
                     value={page}
                     setValue={setPage}
                     count={data.count}
-                    onChange={repeatQuery}
                 />
             </Box>
         </React.Fragment>

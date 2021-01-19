@@ -6,7 +6,6 @@ type Props = {
     value: number
     count: number
     setValue: (value: number) => void
-    onChange: ({ }) => void
 }
 
 const PaginationComponent = (props: Props): JSX.Element => {
@@ -14,7 +13,6 @@ const PaginationComponent = (props: Props): JSX.Element => {
         count,
         value,
         setValue,
-        onChange,
     } = props
     const theme = useTheme();
     const classes = makeStyles({
@@ -26,8 +24,7 @@ const PaginationComponent = (props: Props): JSX.Element => {
         },
     })();
 
-    const handleChangePage = (ev: React.MouseEvent, value: number) => {
-        onChange({ page: value, limit: 10 })
+    const handleChangePage = (_: any, value: number) => {
         setValue(value)
     }
 
