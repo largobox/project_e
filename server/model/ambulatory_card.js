@@ -20,5 +20,4 @@ AmbulatoryCardSchema.set('toJSON', {
     virtuals: true
 });
 
-// export default AmbulatoryCardSchema
 export default mongoose.model('AmbulatoryCard', AmbulatoryCardSchema)

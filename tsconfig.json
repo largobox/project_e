@@ -11,14 +11,16 @@
       // client
       "api/*": ["client/api/*"],
       "component/*": ["client/component/*"],
-      "helper/*": ["client/helper/*"],
+      "app/*": ["client/app/*"],
       "core/*": ["client/component/core/*"],
       "page/*": ["client/app/page/*"],
       "layout/*": ["client/layout/*"],
+      "helper": ["client/helper/index.ts"],
       "type": ["client/type/index.ts"],
       "store": ["client/app/store.ts"],
       // server
-      "controller/*": ["server/controller/*"]
+      "controller/*": ["server/controller/*"],
+      "model/*": ["server/model/*"]
     }
   }
 }

@@ -12,6 +12,7 @@ const clientConfig = {
         alias: {
             // ToDo. this aliases duplicate options in tsconfig.json
             component: path.resolve(__dirname, 'client/component'),
+            app: path.resolve(__dirname, 'client/app'),
             helper: path.resolve(__dirname, 'client/helper'),
             core: path.resolve(__dirname, 'client/component/core'),
             page: path.resolve(__dirname, 'client/app/page'),
@@ -58,6 +59,8 @@ const serverConfig = {
             controller: path.resolve(__dirname, 'server/controller'),
             model: path.resolve(__dirname, 'server/model'),
             database: path.resolve(__dirname, 'server/database'),
+            // Workaround. apollo-server issues #4637 on github OR go from 'apollo-server-express' to 'apollo-server'
+            graphql$: path.resolve(__dirname, './node_modules/graphql/index.js'),
         },
         extensions: ['.tsx', '.ts', '.js'],
     },
@@ -80,7 +83,12 @@ const serverConfig = {
                         ]
                     }
                 }
-            }
+            },
+            {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
+            },
         ]
     }
 }

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Typography, Paper, Grid, GridSize } from '@material-ui/core'
+import { Typography, Grid, GridSize } from '@material-ui/core'
 import { useTheme, makeStyles } from '@material-ui/core/styles';
 
 export type HeaderItemType = {
@@ -22,8 +22,6 @@ const GridHeaderComponent = (props: Props): JSX.Element => {
             color: theme.palette.primary.contrastText,
             paddingTop: theme.spacing(1),
             paddingBottom: theme.spacing(1),
-            borderTopLeftRadius: theme.shape.borderRadius,
-            borderTopRightRadius: theme.shape.borderRadius,
         },
         headerItem: {
             paddingLeft: theme.spacing(2),
@@ -32,24 +30,23 @@ const GridHeaderComponent = (props: Props): JSX.Element => {
     })();
 
     return (
-        <Paper variant='outlined'>
-            <Grid
-                container
-                classes={{ root: classes.headerCont }}
-            >
-                {
-                    items.map(item =>
-                        <Grid
-                            item
-                            classes={{ root: classes.headerItem }}
-                            xs={item.size}
-                        >
-                            <Typography variant='h6'>{item.label}</Typography>
-                        </Grid>
-                    )
-                }
-            </Grid>
-        </Paper>
+        <Grid
+            container
+            classes={{ root: classes.headerCont }}
+        >
+            {
+                items.map(item =>
+                    <Grid
+                        item
+                        key={item.label}
+                        classes={{ root: classes.headerItem }}
+                        xs={item.size}
+                    >
+                        <Typography variant='h6'>{item.label}</Typography>
+                    </Grid>
+                )
+            }
+        </Grid>
     )
 }
 

@@ -12,12 +12,15 @@ type Props = {
     children: JSX.Element
 }
 
+export type repeatQueryVariablesT = {
+    limit?: number, page?: number
+}
+
 const FetchWrapper = (props: Props): JSX.Element => {
     const {
         query,
         children,
     } = props
-    console.log('children: ', children)
     const theme = useTheme();
     const classes = makeStyles({
         preloaderCont: {
@@ -31,7 +34,18 @@ const FetchWrapper = (props: Props): JSX.Element => {
             padding: theme.spacing(2),
         }
     })();
-    const { loading, error, data } = useQuery(query);
+    const { loading, error, data, fetchMore } = useQuery(query);
+
+    const repeatQuery = (variables: repeatQueryVariablesT) => {
+        fetchMore({
+            variables: {
+                pagination: {
+                    offset: (variables.page - 1) * variables.limit,
+                    limit: variables.limit,
+                }
+            }
+        })
+    }
 
     if (error) {
         const text = `Компонент "${getComponentTypeLabel(children.type.name)}". Ошибка при получении данных`
@@ -40,7 +54,7 @@ const FetchWrapper = (props: Props): JSX.Element => {
 
         return (
             <Paper className={classes.errorCont}>
-                <Typography>{text}</Typography>                
+                <Typography>{text}</Typography>
             </Paper>
         )
     }
@@ -53,7 +67,7 @@ const FetchWrapper = (props: Props): JSX.Element => {
         )
     }
 
-    return React.cloneElement(children, { data: data.items })
+    return React.cloneElement(children, { data: data.connection, repeatQuery })
 }
 
 export default FetchWrapper

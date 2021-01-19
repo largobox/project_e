@@ -4157,7 +4157,6 @@ var Reobserver = (function () {
 /*! export ApolloCache [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/@apollo/client/cache/core/cache.js .ApolloCache */
 /*! export ApolloClient [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/@apollo/client/core/ApolloClient.js .ApolloClient */
 /*! export ApolloError [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/@apollo/client/errors/index.js .ApolloError */
-/*! export ApolloLink [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] */
 /*! export Cache [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/@apollo/client/cache/core/types/Cache.js .Cache */
 /*! export HttpLink [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] */
 /*! export InMemoryCache [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/@apollo/client/cache/inmemory/inMemoryCache.js .InMemoryCache */
@@ -4166,18 +4165,14 @@ var Reobserver = (function () {
 /*! export Observable [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/zen-observable/index.js .default */
 /*! export ObservableQuery [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/@apollo/client/core/ObservableQuery.js .ObservableQuery */
 /*! export checkFetcher [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] */
-/*! export concat [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] */
 /*! export createHttpLink [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] */
 /*! export createSignalIfSupported [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] */
 /*! export default [not provided] [no usage info] [missing usage info prevents renaming] */
 /*! export defaultDataIdFromObject [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/@apollo/client/cache/inmemory/policies.js .defaultDataIdFromObject */
 /*! export disableExperimentalFragmentVariables [provided] [no usage info] [missing usage info prevents renaming] */
 /*! export disableFragmentWarnings [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export empty [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] */
 /*! export enableExperimentalFragmentVariables [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export execute [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] */
 /*! export fallbackHttpConfig [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] */
-/*! export from [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] */
 /*! export fromError [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/@apollo/client/link/utils/fromError.js .fromError */
 /*! export fromPromise [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/@apollo/client/link/utils/fromPromise.js .fromPromise */
 /*! export gql [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/graphql-tag/src/index.js .default */
@@ -4193,7 +4188,6 @@ var Reobserver = (function () {
 /*! export selectURI [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] */
 /*! export serializeFetchParameter [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] */
 /*! export setLogVerbosity [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/ts-invariant/lib/invariant.esm.js .setVerbosity */
-/*! export split [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] */
 /*! export throwServerError [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/@apollo/client/link/utils/throwServerError.js .throwServerError */
 /*! export toPromise [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/@apollo/client/link/utils/toPromise.js .toPromise */
 /*! other exports [maybe provided (runtime-defined)] [no usage info] */
@@ -4395,39 +4389,33 @@ var ApolloError = (function (_super) {
   !*** ./node_modules/@apollo/client/index.js ***!
   \**********************************************/
 /*! namespace exports */
-/*! export ApolloCache [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/cache/core/cache.js .ApolloCache */
-/*! export ApolloClient [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/core/ApolloClient.js .ApolloClient */
-/*! export ApolloConsumer [provided] [no usage info] [provision prevents renaming (no use info)] */
-/*! export ApolloError [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/errors/index.js .ApolloError */
-/*! export ApolloProvider [provided] [no usage info] [provision prevents renaming (no use info)] */
-/*! export Cache [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/cache/core/types/Cache.js .Cache */
-/*! export DocumentType [provided] [no usage info] [provision prevents renaming (no use info)] */
-/*! export InMemoryCache [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/cache/inmemory/inMemoryCache.js .InMemoryCache */
-/*! export MissingFieldError [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/cache/core/types/common.js .MissingFieldError */
-/*! export NetworkStatus [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/core/networkStatus.js .NetworkStatus */
-/*! export Observable [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/zen-observable/index.js .default */
-/*! export ObservableQuery [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/core/ObservableQuery.js .ObservableQuery */
+/*! export ApolloCache [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/cache/core/cache.js .ApolloCache */
+/*! export ApolloClient [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/core/ApolloClient.js .ApolloClient */
+/*! export ApolloError [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/errors/index.js .ApolloError */
+/*! export ApolloProvider [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] */
+/*! export Cache [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/cache/core/types/Cache.js .Cache */
+/*! export InMemoryCache [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/cache/inmemory/inMemoryCache.js .InMemoryCache */
+/*! export MissingFieldError [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/cache/core/types/common.js .MissingFieldError */
+/*! export NetworkStatus [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/core/networkStatus.js .NetworkStatus */
+/*! export Observable [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/zen-observable/index.js .default */
+/*! export ObservableQuery [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/core/ObservableQuery.js .ObservableQuery */
 /*! export default [not provided] [no usage info] [missing usage info prevents renaming] */
-/*! export defaultDataIdFromObject [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/cache/inmemory/policies.js .defaultDataIdFromObject */
-/*! export disableExperimentalFragmentVariables [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/core/index.js .disableExperimentalFragmentVariables */
-/*! export disableFragmentWarnings [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/core/index.js .disableFragmentWarnings */
-/*! export enableExperimentalFragmentVariables [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/core/index.js .enableExperimentalFragmentVariables */
-/*! export fromError [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/link/utils/fromError.js .fromError */
-/*! export fromPromise [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/link/utils/fromPromise.js .fromPromise */
-/*! export getApolloContext [provided] [no usage info] [provision prevents renaming (no use info)] */
-/*! export gql [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/graphql-tag/src/index.js .default */
-/*! export isApolloError [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/errors/index.js .isApolloError */
-/*! export isReference [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/utilities/graphql/storeUtils.js .isReference */
-/*! export makeReference [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/utilities/graphql/storeUtils.js .makeReference */
-/*! export makeVar [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/cache/inmemory/reactiveVars.js .makeVar */
-/*! export mergeOptions [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/core/ApolloClient.js .mergeOptions */
-/*! export operationName [provided] [no usage info] [provision prevents renaming (no use info)] */
-/*! export parser [provided] [no usage info] [provision prevents renaming (no use info)] */
-/*! export resetApolloContext [provided] [no usage info] [provision prevents renaming (no use info)] */
-/*! export resetCaches [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/core/index.js .resetCaches */
-/*! export setLogVerbosity [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/ts-invariant/lib/invariant.esm.js .setVerbosity */
-/*! export throwServerError [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/link/utils/throwServerError.js .throwServerError */
-/*! export toPromise [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/link/utils/toPromise.js .toPromise */
+/*! export defaultDataIdFromObject [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/cache/inmemory/policies.js .defaultDataIdFromObject */
+/*! export disableExperimentalFragmentVariables [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/core/index.js .disableExperimentalFragmentVariables */
+/*! export disableFragmentWarnings [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/core/index.js .disableFragmentWarnings */
+/*! export enableExperimentalFragmentVariables [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/core/index.js .enableExperimentalFragmentVariables */
+/*! export fromError [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/link/utils/fromError.js .fromError */
+/*! export fromPromise [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/link/utils/fromPromise.js .fromPromise */
+/*! export gql [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/graphql-tag/src/index.js .default */
+/*! export isApolloError [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/errors/index.js .isApolloError */
+/*! export isReference [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/utilities/graphql/storeUtils.js .isReference */
+/*! export makeReference [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/utilities/graphql/storeUtils.js .makeReference */
+/*! export makeVar [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/cache/inmemory/reactiveVars.js .makeVar */
+/*! export mergeOptions [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/core/ApolloClient.js .mergeOptions */
+/*! export resetCaches [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/core/index.js .resetCaches */
+/*! export setLogVerbosity [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/ts-invariant/lib/invariant.esm.js .setVerbosity */
+/*! export throwServerError [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/link/utils/throwServerError.js .throwServerError */
+/*! export toPromise [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/@apollo/client/link/utils/toPromise.js .toPromise */
 /*! export useQuery [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] */
 /*! export useReactiveVar [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] */
 /*! other exports [maybe provided (runtime-defined)] [no usage info] */
@@ -9263,7 +9251,6 @@ function _unsupportedIterableToArray(o, minLen) {
   \**********************************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module */
-/*! CommonJS bailout: module.exports is used directly at 7:0-14 */
 /***/ ((module) => {
 
 function _interopRequireDefault(obj) {
@@ -9282,7 +9269,6 @@ module.exports = _interopRequireDefault;
   \***********************************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 55:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var _typeof = __webpack_require__(/*! @babel/runtime/helpers/typeof */ "./node_modules/@babel/runtime/helpers/typeof.js");
@@ -9349,9 +9335,6 @@ module.exports = _interopRequireWildcard;
   \*******************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module */
-/*! CommonJS bailout: module.exports is used directly at 5:4-18 */
-/*! CommonJS bailout: module.exports is used directly at 9:4-18 */
-/*! CommonJS bailout: module.exports is used directly at 17:0-14 */
 /***/ ((module) => {
 
 function _typeof(obj) {
@@ -22862,7 +22845,6 @@ function supportedValue(property, value) {
   \**********************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module */
-/*! CommonJS bailout: module.exports is used directly at 3:0-14 */
 /***/ ((module) => {
 
 "use strict";
@@ -22935,7 +22917,6 @@ module.exports = function (data, opts) {
   \***********************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 180:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var parser = __webpack_require__(/*! graphql/language/parser */ "./node_modules/graphql/language/parser.js");
@@ -29507,7 +29488,6 @@ function createMemoryHistory(props) {
   \**********************************************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 103:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -33086,7 +33066,6 @@ var index = react__WEBPACK_IMPORTED_MODULE_0__.createContext || createReactConte
   \*********************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module */
-/*! CommonJS bailout: module.exports is used directly at 65:0-14 */
 /***/ ((module) => {
 
 "use strict";
@@ -33739,7 +33718,6 @@ function wrap(originalFunction, options) {
   \***************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 102:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -33855,7 +33833,6 @@ module.exports = checkPropTypes;
   \************************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 38:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -34460,7 +34437,6 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
   \******************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 14:2-16 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 /**
@@ -34488,7 +34464,6 @@ if (true) {
   \*************************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module */
-/*! CommonJS bailout: module.exports is used directly at 12:0-14 */
 /***/ ((module) => {
 
 "use strict";
@@ -61960,7 +61935,6 @@ if (true) {
   \*****************************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module */
-/*! CommonJS bailout: module.exports is used directly at 1:0-14 */
 /***/ ((module) => {
 
 module.exports = Array.isArray || function (arr) {
@@ -61976,7 +61950,6 @@ module.exports = Array.isArray || function (arr) {
   \************************************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 6:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var isarray = __webpack_require__(/*! isarray */ "./node_modules/react-router/node_modules/isarray/index.js")
@@ -66435,16 +66408,6 @@ exports.unstable_wrap = unstable_wrap;
 /*! export unstable_wrapCallback [provided] [no usage info] [missing usage info prevents renaming] */
 /*! other exports [not provided] [no usage info] */
 /*! runtime requirements: __webpack_exports__ */
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 52:26-46 */
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 125:13-33 */
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 149:24-44 */
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 193:15-35 */
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 548:28-48 */
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 565:25-45 */
-/*! CommonJS bailout: exports.unstable_shouldYield(...) prevents optimization as exports is passed as call context at 578:74-102 */
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 591:20-40 */
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 695:20-40 */
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 804:24-44 */
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -67628,8 +67591,41 @@ var __makeTemplateObject = (undefined && undefined.__makeTemplateObject) || func
     return cooked;
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_apollo_client__WEBPACK_IMPORTED_MODULE_0__.gql)(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    query GetAmbulatoryCards {\n        items: ambulatoryCards {\n            id\n            name\n        }\n    }\n"], ["\n    query GetAmbulatoryCards {\n        items: ambulatoryCards {\n            id\n            name\n        }\n    }\n"]))));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_apollo_client__WEBPACK_IMPORTED_MODULE_0__.gql)(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    query GetAmbulatoryCards($pagination: PaginationInput) {\n        connection: ambulatoryCardsConnection(pagination: $pagination) {\n            count\n            items {\n                id\n                name\n            }\n        }\n    }\n"], ["\n    query GetAmbulatoryCards($pagination: PaginationInput) {\n        connection: ambulatoryCardsConnection(pagination: $pagination) {\n            count\n            items {\n                id\n                name\n            }\n        }\n    }\n"]))));
 var templateObject_1;
+
+
+/***/ }),
+
+/***/ "./client/app/cache.ts":
+/*!*****************************!*\
+  !*** ./client/app/cache.ts ***!
+  \*****************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_require__, __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @apollo/client */ "./node_modules/@apollo/client/core/index.js");
+
+var cache = new _apollo_client__WEBPACK_IMPORTED_MODULE_0__.InMemoryCache({
+    typePolicies: {
+        Query: {
+            fields: {
+                ambulatoryCardsConnection: {
+                    keyArgs: false,
+                },
+            },
+        },
+    },
+});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (cache);
 
 
 /***/ }),
@@ -68053,7 +68049,6 @@ __webpack_require__.r(__webpack_exports__);
 
 var FetchWrapper = function (props) {
     var query = props.query, children = props.children;
-    console.log('children: ', children);
     var theme = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__.default)();
     var classes = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__.default)({
         preloaderCont: {
@@ -68067,7 +68062,17 @@ var FetchWrapper = function (props) {
             padding: theme.spacing(2),
         }
     })();
-    var _a = (0,_apollo_client__WEBPACK_IMPORTED_MODULE_4__.useQuery)(query), loading = _a.loading, error = _a.error, data = _a.data;
+    var _a = (0,_apollo_client__WEBPACK_IMPORTED_MODULE_4__.useQuery)(query), loading = _a.loading, error = _a.error, data = _a.data, fetchMore = _a.fetchMore;
+    var repeatQuery = function (variables) {
+        fetchMore({
+            variables: {
+                pagination: {
+                    offset: (variables.page - 1) * variables.limit,
+                    limit: variables.limit,
+                }
+            }
+        });
+    };
     if (error) {
         var text = "\u041A\u043E\u043C\u043F\u043E\u043D\u0435\u043D\u0442 \"" + (0,helper__WEBPACK_IMPORTED_MODULE_1__.getComponentTypeLabel)(children.type.name) + "\". \u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u0438 \u0434\u0430\u043D\u043D\u044B\u0445";
         console.error('error: ', error);
@@ -68078,7 +68083,7 @@ var FetchWrapper = function (props) {
         return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_5__.default, { className: classes.preloaderCont },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_7__.default, null)));
     }
-    return react__WEBPACK_IMPORTED_MODULE_0__.cloneElement(children, { data: data.items });
+    return react__WEBPACK_IMPORTED_MODULE_0__.cloneElement(children, { data: data.connection, repeatQuery: repeatQuery });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FetchWrapper);
 
@@ -68139,9 +68144,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Paper/Paper.js");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Grid/Grid.js");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Typography/Typography.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Grid/Grid.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Typography/Typography.js");
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/useTheme.js");
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/makeStyles.js");
 
@@ -68156,19 +68160,16 @@ var GridHeaderComponent = function (props) {
             color: theme.palette.primary.contrastText,
             paddingTop: theme.spacing(1),
             paddingBottom: theme.spacing(1),
-            borderTopLeftRadius: theme.shape.borderRadius,
-            borderTopRightRadius: theme.shape.borderRadius,
         },
         headerItem: {
             paddingLeft: theme.spacing(2),
             paddingRight: theme.spacing(2),
         },
     })();
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__.default, { variant: 'outlined' },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__.default, { container: true, classes: { root: classes.headerCont } }, items.map(function (item) {
-            return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__.default, { item: true, classes: { root: classes.headerItem }, xs: item.size },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__.default, { variant: 'h6' }, item.label));
-        }))));
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__.default, { container: true, classes: { root: classes.headerCont } }, items.map(function (item) {
+        return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__.default, { item: true, key: item.label, classes: { root: classes.headerItem }, xs: item.size },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__.default, { variant: 'h6' }, item.label));
+    })));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (GridHeaderComponent);
 
@@ -68191,21 +68192,72 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _material_ui_lab_Pagination__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/lab/Pagination */ "./node_modules/@material-ui/lab/esm/Pagination/Pagination.js");
-/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./header */ "./client/component/core/grid/header.tsx");
+/* harmony import */ var _pagination__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pagination */ "./client/component/core/grid/pagination.tsx");
+/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./header */ "./client/component/core/grid/header.tsx");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Box/Box.js");
+
+
 
 
 
 var GridComponent = function (props) {
-    var data = props.data, Item = props.Item, headers = props.headers;
+    var data = props.data, repeatQuery = props.repeatQuery, headers = props.headers, Item = props.Item;
+    var _a = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(1), page = _a[0], setPage = _a[1];
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_header__WEBPACK_IMPORTED_MODULE_1__.default, { items: headers }),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_lab_Pagination__WEBPACK_IMPORTED_MODULE_2__.default, null),
-        data.map(function (item) {
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__.default, { mb: 1 },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pagination__WEBPACK_IMPORTED_MODULE_1__.default, { value: page, setValue: setPage, count: data.count, onChange: repeatQuery })),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_header__WEBPACK_IMPORTED_MODULE_2__.default, { items: headers }),
+        data.items.map(function (item) {
             return react__WEBPACK_IMPORTED_MODULE_0__.createElement(Item, { key: item.id, data: item });
-        })));
+        }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__.default, { mt: 1 },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pagination__WEBPACK_IMPORTED_MODULE_1__.default, { value: page, setValue: setPage, count: data.count, onChange: repeatQuery }))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (GridComponent);
+
+
+/***/ }),
+
+/***/ "./client/component/core/grid/pagination.tsx":
+/*!***************************************************!*\
+  !*** ./client/component/core/grid/pagination.tsx ***!
+  \***************************************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_require__, __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/useTheme.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/makeStyles.js");
+/* harmony import */ var _material_ui_lab_Pagination__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/lab/Pagination */ "./node_modules/@material-ui/lab/esm/Pagination/Pagination.js");
+
+
+
+var PaginationComponent = function (props) {
+    var count = props.count, value = props.value, setValue = props.setValue, onChange = props.onChange;
+    var theme = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__.default)();
+    var classes = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__.default)({
+        root: {
+            display: 'inline-block',
+            backgroundColor: theme.palette.grey[400],
+            padding: theme.spacing(1),
+            borderRadius: theme.shape.borderRadius,
+        },
+    })();
+    var handleChangePage = function (ev, value) {
+        onChange({ page: value, limit: 10 });
+        setValue(value);
+    };
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_lab_Pagination__WEBPACK_IMPORTED_MODULE_3__.default, { page: value, classes: { root: classes.root }, count: count, color: 'primary', onChange: handleChangePage }));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PaginationComponent);
 
 
 /***/ }),
@@ -68298,15 +68350,16 @@ var getComponentTypeLabel = function (name) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @apollo/client */ "./node_modules/@apollo/client/core/index.js");
-/* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @apollo/client */ "./node_modules/@apollo/client/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @apollo/client */ "./node_modules/@apollo/client/core/index.js");
+/* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @apollo/client */ "./node_modules/@apollo/client/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app */ "./client/app/index.tsx");
-/* harmony import */ var _material_ui_core_CssBaseline__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/CssBaseline */ "./node_modules/@material-ui/core/esm/CssBaseline/CssBaseline.js");
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/styles/esm/ThemeProvider/ThemeProvider.js");
+/* harmony import */ var _material_ui_core_CssBaseline__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/CssBaseline */ "./node_modules/@material-ui/core/esm/CssBaseline/CssBaseline.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/styles/esm/ThemeProvider/ThemeProvider.js");
 /* harmony import */ var _theme__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./theme */ "./client/theme/index.ts");
-/* harmony import */ var history__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! history */ "./node_modules/history/esm/history.js");
+/* harmony import */ var history__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! history */ "./node_modules/history/esm/history.js");
+/* harmony import */ var app_cache__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! app/cache */ "./client/app/cache.ts");
 
 
 
@@ -68316,15 +68369,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var history = (0,history__WEBPACK_IMPORTED_MODULE_4__.createBrowserHistory)();
-var client = new _apollo_client__WEBPACK_IMPORTED_MODULE_5__.ApolloClient({
+
+var history = (0,history__WEBPACK_IMPORTED_MODULE_5__.createBrowserHistory)();
+var client = new _apollo_client__WEBPACK_IMPORTED_MODULE_6__.ApolloClient({
     uri: '/graphql',
-    cache: new _apollo_client__WEBPACK_IMPORTED_MODULE_5__.InMemoryCache()
+    cache: app_cache__WEBPACK_IMPORTED_MODULE_4__.default,
 });
-(0,react_dom__WEBPACK_IMPORTED_MODULE_1__.render)(react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Router, { history: history },
-    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_apollo_client__WEBPACK_IMPORTED_MODULE_7__.ApolloProvider, { client: client },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core_CssBaseline__WEBPACK_IMPORTED_MODULE_8__.default, null),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_9__.default, { theme: _theme__WEBPACK_IMPORTED_MODULE_3__.default },
+(0,react_dom__WEBPACK_IMPORTED_MODULE_1__.render)(react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Router, { history: history },
+    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_apollo_client__WEBPACK_IMPORTED_MODULE_8__.ApolloProvider, { client: client },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core_CssBaseline__WEBPACK_IMPORTED_MODULE_9__.default, null),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_10__.default, { theme: _theme__WEBPACK_IMPORTED_MODULE_3__.default },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_app__WEBPACK_IMPORTED_MODULE_2__.default, null)))), document.getElementById('root'));
 
 
@@ -68397,7 +68451,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/createMuiTheme.js");
 
-var theme = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__.default)();
+var theme = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__.default)({
+    shape: {
+        borderRadius: 6
+    }
+});
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (theme);
 
 

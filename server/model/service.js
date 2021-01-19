@@ -13,5 +13,4 @@ ServiceScema.set('toJSON', {
     virtuals: true
 });
 
-// export default ServiceScema
 export default mongoose.model('Service', ServiceScema)

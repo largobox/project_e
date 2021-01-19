@@ -1,15 +1,13 @@
 import express from 'express'
 import path from 'path'
-import { graphqlHTTP } from 'express-graphql'
-import schema from './schema'
+import { ApolloServer } from 'apollo-server-express' // ToDo. After beta version need go to 'apollo-server'
+import { typeDefs, resolvers } from './schema'
 import 'database'
 
+const server = new ApolloServer({ typeDefs, resolvers });
 const app = express()
 
-app.use('/graphql', graphqlHTTP({
-  schema,
-  graphiql: true,
-}));
+server.applyMiddleware({ app });
 
 app.use(express.static(path.join(__dirname, 'public')))
 
@@ -17,4 +15,6 @@ app.get('/*', (req, res) => {
     res.sendFile('index.html', {root: __dirname })
 });
 
-app.listen(3000)
+app.listen({ port: 3000 }, () =>
+  console.log('Graphiql browse to http://localhost:3000' + server.graphqlPath)
+);

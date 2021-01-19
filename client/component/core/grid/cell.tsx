@@ -22,7 +22,7 @@ const CellComponent = (props: Props): JSX.Element => {
 
     return (
         <Grid
-            classes={{root: classes.root}}
+            classes={{ root: classes.root }}
             item
             xs={xs}
         >
