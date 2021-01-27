@@ -1,73 +1,52 @@
 import * as React from 'react'
 import { DocumentNode } from 'graphql'
 import { useQuery } from '@apollo/client';
-import CircularProgress from '@material-ui/core/CircularProgress'
-import Typography from '@material-ui/core/Typography'
-import Paper from '@material-ui/core/Paper'
-import { useTheme, makeStyles } from '@material-ui/core/styles';
 import { getComponentTypeLabel } from 'helper'
+import Preloader from 'core/preloader'
+import ErrorReport from 'core/error_report'
+import { SortingElement } from 'shared/type'
 
 type Props = {
     query: DocumentNode
     children: JSX.Element
+    queryParams?: {}
 }
 
-export type repeatQueryVariablesT = {
-    limit?: number, page?: number
+export type QueryVariables = {
+    limit?: number, offset?: number, sort?: [SortingElement]
 }
 
 const FetchWrapper = (props: Props): JSX.Element => {
     const {
         query,
         children,
+        queryParams,
     } = props
-    const theme = useTheme();
-    const classes = makeStyles({
-        preloaderCont: {
-            textAlign: 'center',
-            padding: theme.spacing(2),
-            backgroundColor: theme.palette.grey[300],
-        },
-        errorCont: {
-            backgroundColor: theme.palette.error.main,
-            color: theme.palette.error.contrastText,
-            padding: theme.spacing(2),
-        }
-    })();
-    const { loading, error, data, fetchMore } = useQuery(query);
+    const { loading, error, data, fetchMore } = useQuery(query, {variables: queryParams});
 
-    const repeatQuery = (variables: repeatQueryVariablesT) => {
+    const repeatQuery = (queryVariables: QueryVariables) => {
         fetchMore({
             variables: {
-                pagination: {
-                    offset: (variables.page - 1) * variables.limit,
-                    limit: variables.limit,
-                }
+                queryVariables
             }
         })
     }
 
     if (error) {
-        const text = `Компонент "${getComponentTypeLabel(children.type.name)}". Ошибка при получении данных`
-
-        console.error('error: ', error)
-
         return (
-            <Paper className={classes.errorCont}>
-                <Typography>{text}</Typography>
-            </Paper>
+            <ErrorReport
+                error={error}
+                componentName={getComponentTypeLabel(children.type.name)}
+                message='Ошибка при получении данных с сервера'
+            />
         )
     }
-
-    if (loading) {
-        return (
-            <Paper className={classes.preloaderCont}>
-                <CircularProgress />
-            </Paper>
-        )
+    if (loading) return <Preloader />
+    if (data && data.result) {
+        return React.cloneElement(children, { fetchData: data.result, repeatQuery })
     }
 
-    return React.cloneElement(children, { data: data.connection, repeatQuery })
+    return null
 }
 
 export default FetchWrapper

@@ -4,13 +4,13 @@ import Pagination from '@material-ui/lab/Pagination'
 
 type Props = {
     value: number
-    count: number
+    pageCount: number   
     setValue: (value: number) => void
 }
 
-const PaginationComponent = (props: Props): JSX.Element => {
+const PaginationComponent: React.FC<Props> = (props) => {
     const {
-        count,
+        pageCount,
         value,
         setValue,
     } = props
@@ -19,7 +19,10 @@ const PaginationComponent = (props: Props): JSX.Element => {
         root: {
             display: 'inline-block',
             backgroundColor: theme.palette.grey[400],
-            padding: theme.spacing(1),
+            paddingTop: theme.spacing(1),
+            paddingBottom: theme.spacing(1),
+            paddingLeft: theme.spacing(0.5),
+            paddingRight: theme.spacing(0.5),
             borderRadius: theme.shape.borderRadius,
         },
     })();
@@ -28,11 +31,13 @@ const PaginationComponent = (props: Props): JSX.Element => {
         setValue(value)
     }
 
+    if (pageCount < 2) return null
+
     return (
         <Pagination
             page={value}
             classes={{ root: classes.root }}
-            count={count}
+            count={pageCount}
             color='primary'
             onChange={handleChangePage}
         />

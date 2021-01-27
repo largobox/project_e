@@ -1,7 +1,7 @@
 import * as React from 'react'
 import SimpleLayout from 'layout/simple'
 
-const ServiceListPage = (): JSX.Element => {
+const ServiceListPage: React.FC = () => {
     return (
         <SimpleLayout title='Услуги'>
             <span>...</span>

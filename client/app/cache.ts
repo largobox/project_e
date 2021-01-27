@@ -4,7 +4,7 @@ const cache = new InMemoryCache({
     typePolicies: {
         Query: {
             fields: {
-                ambulatoryCardsConnection: {
+                ambulatoryCards: {
                     keyArgs: false,
                 },
             },

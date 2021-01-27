@@ -1,12 +1,14 @@
 import { gql } from '@apollo/client';
 
 export default gql`
-    query GetAmbulatoryCards($pagination: PaginationInput) {
-        connection: ambulatoryCardsConnection(pagination: $pagination) {
-            count
+    query GetAmbulatoryCards($queryVariables: QueryVariablesInput) {
+        result: ambulatoryCards(queryVariables: $queryVariables) {
+            totalCount
             items {
                 id
                 name
+                createdAt
+                updatedAt
             }
         }
     }

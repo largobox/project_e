@@ -18,6 +18,8 @@ const GridHeaderComponent = (props: Props): JSX.Element => {
     const theme = useTheme();
     const classes = makeStyles({
         headerCont: {
+            borderTopLeftRadius: theme.shape.borderRadius,
+            borderTopRightRadius: theme.shape.borderRadius,
             backgroundColor: theme.palette.primary.main,
             color: theme.palette.primary.contrastText,
             paddingTop: theme.spacing(1),

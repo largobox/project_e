@@ -13,7 +13,7 @@ type MenuItemType = {
 }
 
 const items: Array<MenuItemType> = [
-    { url: '/registry', label: 'Регистратура' },
+    { url: '/ambulatory-card', label: 'Регистратура' },
     { url: '/services', label: 'Услуги' }
 ]
 

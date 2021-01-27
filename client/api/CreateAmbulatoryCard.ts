@@ -2,9 +2,10 @@ import { gql } from '@apollo/client';
 
 export default gql`
     mutation CreateAmbulatoryCard($input: AmbulatoryCardInput) {
-        createAmbulatoryCard(input: $input) {
+        ambulatoryCardCreate(input: $input) {
             id
             name
+            patronymic
         }
     }
 `

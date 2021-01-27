@@ -58,6 +58,7 @@ const serverConfig = {
         alias: {
             controller: path.resolve(__dirname, 'server/controller'),
             model: path.resolve(__dirname, 'server/model'),
+            shared: path.resolve(__dirname, 'shared'),
             database: path.resolve(__dirname, 'server/database'),
             // Workaround. apollo-server issues #4637 on github OR go from 'apollo-server-express' to 'apollo-server'
             graphql$: path.resolve(__dirname, './node_modules/graphql/index.js'),
