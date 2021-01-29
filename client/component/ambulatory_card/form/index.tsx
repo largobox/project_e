@@ -5,7 +5,13 @@ import Input from 'core/input'
 import Row from 'core/form/row'
 import Cell from 'core/form/cell'
 import * as yup from 'yup';
-import CreateAmbulatoryCard from 'api/CreateAmbulatoryCard'
+import { AmbulatoryCardI } from 'shared/type'
+import { DocumentNode } from 'graphql'
+
+type Props = {
+    initialData?: AmbulatoryCardI,
+    mutation: DocumentNode,
+}
 
 const schema = yup.object().shape({
     name: yup.string().required(),
@@ -13,15 +19,17 @@ const schema = yup.object().shape({
     patronymic: yup.string(),
 });
 
-const AmbulatoryCardForm = (): JSX.Element => {
+const AmbulatoryCardForm: React.FC<Props> = (props) => {
+    const { initialData, mutation } = props
     const history = useHistory()
     const handleSuccessSubmit = () => history.push('/ambulatory-card')
 
     return (
         <Form
             validationSchema={schema}
-            submitMutation={CreateAmbulatoryCard}
+            submitMutation={mutation}
             onSuccess={handleSuccessSubmit}
+            initialData={initialData}
         >
             <Row>
                 <Cell>

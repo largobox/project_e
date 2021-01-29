@@ -1,13 +1,8 @@
 import * as React from 'react'
-import AmbulatoryCardForm from 'component/ambulatory_card/form'
-import SimpleLayout from 'layout/simple'
+import FormCreate from 'component/ambulatory_card/form/create'
 
 const AmbulatoryCardCreateFormPage: React.FC = () => {
-    return (
-        <SimpleLayout title='Добавить карту пациента'>
-            <AmbulatoryCardForm />
-        </SimpleLayout>
-    )
+    return <FormCreate />
 }
 
 export default AmbulatoryCardCreateFormPage

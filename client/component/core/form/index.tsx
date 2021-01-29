@@ -18,10 +18,12 @@ type Props = {
     validationSchema: AnyObjectSchema
     submitMutation: DocumentNode
     onSuccess: () => void
+    initialData?: {id: string}
 }
 
 const FormComponent = (props: Props): JSX.Element => {
     const {
+        initialData,
         validationSchema,
         children,
         submitMutation,
@@ -33,7 +35,8 @@ const FormComponent = (props: Props): JSX.Element => {
         handleSubmit,
         errors,
     } = useForm({
-        resolver: yupResolver(validationSchema)
+        resolver: yupResolver(validationSchema),
+        defaultValues: initialData,
     });
     const theme = useTheme();
     const classes = makeStyles({
@@ -41,12 +44,16 @@ const FormComponent = (props: Props): JSX.Element => {
             marginBottom: theme.spacing(1)
         },
     })();
-    const onSubmit = handleSubmit((data) => {
+    const onSubmit = handleSubmit<{ [key: string]: any }>((data) => {
         Object.keys(data).forEach(key => {
             if (data[key] === '') data[key] = null
         })
 
-        mutateFunc({ variables: { input: data } })
+        const variables: {input: object, id?: string} = { input: data }
+
+        if (initialData && initialData.id) variables.id = initialData.id
+
+        mutateFunc({ variables })
     });
 
     if (error) {

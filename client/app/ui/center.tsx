@@ -6,7 +6,7 @@ import AmbulatoryCardCreateFormPage from 'app/page/AmbulatoryCardCreateFormPage'
 import AmbulatoryCardUpdateFormPage from 'page/AmbulatoryCardUpdateFormPage'
 import ServiceListPage from 'page/ServiceListPage'
 
-const Right = (): JSX.Element => {
+const Center: React.FC = () => {
     return (
         <Switch>
             <Route exact path='/ambulatory-card'>
@@ -28,4 +28,4 @@ const Right = (): JSX.Element => {
     )
 }
 
-export default Right
+export default Center

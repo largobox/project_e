@@ -20,7 +20,7 @@ const DecriptionTab: React.FC<Props> = (props) => {
             tollbarProps={{
                 baseUrl: 'ambulatory-card',
                 deleteQuery: DELETE_AMBULATORY_CARD,
-                alertTitle: 'Удалить данную карты пациента?',
+                alertTitle: 'Удалить данную карту пациента?',
                 alertText: 'После удаления данная карта будет помещена в архив.',
             }}
         >

@@ -19,6 +19,8 @@ const clientConfig = {
             layout: path.resolve(__dirname, 'client/layout'),
             api: path.resolve(__dirname, 'client/api'),
             store: path.resolve(__dirname, 'client/app/store'),
+            constant: path.resolve(__dirname, 'client/constant'),
+            error: path.resolve(__dirname, 'client/error'),            
         },
         extensions: ['.tsx', '.ts', '.js'],
     },

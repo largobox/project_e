@@ -3,16 +3,19 @@ import Box from '@material-ui/core/Box'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper'
+import BreadcrumbComponent, { TBreadcrumb } from 'core/breadcrumb'
 
 type Props = {
     title: string
     children: JSX.Element
+    breadcrumbs?: TBreadcrumb[]
 }
 
-const SimpleLayout = (props: Props): JSX.Element => {
+const SimpleLayout: React.FC<Props> = (props) => {
     const {
         children,
         title,
+        breadcrumbs,
     } = props
 
     const theme = useTheme()
@@ -30,6 +33,12 @@ const SimpleLayout = (props: Props): JSX.Element => {
 
     return (
         <Box>
+            {
+                breadcrumbs && breadcrumbs.length > 0 ?
+                    <BreadcrumbComponent items={breadcrumbs} />
+                    :
+                    null
+            }
             <Paper className={classes.titleCont}>
                 <Typography variant='h4'>{title}</Typography>
             </Paper>

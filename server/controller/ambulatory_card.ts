@@ -26,7 +26,7 @@ const ambulatoryCardController = {
         }
     },
 
-    item: async (params: {id: string}) => {
+    item: async (params: { id: string }) => {
         const { id } = params
         const item = await AmbulatoryCard.findOne({ _id: id })
 
@@ -34,16 +34,23 @@ const ambulatoryCardController = {
     },
 
     create: async (data: AmbulatoryCardInputI) => {
-        const createdCard = await AmbulatoryCard.create(data);
+        const result = await AmbulatoryCard.create(data);
 
-        return createdCard
+        return !!result.ok
     },
 
-    delete: async (data: {id: string}) => {
-        const { id } = data
-        const deletedCard = await AmbulatoryCard.deleteOne({_id: id});
+    update: async (data: { id: string, input: AmbulatoryCardInputI }) => {
+        const { id, input } = data
+        const updatedCard = await AmbulatoryCard.findOneAndUpdate({ _id: id }, input, {new: true});
 
-        return !!deletedCard.ok
+        return updatedCard
+    },
+
+    delete: async (data: { id: string }) => {
+        const { id } = data
+        const result = await AmbulatoryCard.deleteOne({ _id: id });
+
+        return !!result.ok
     },
 };
 

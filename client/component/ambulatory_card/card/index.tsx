@@ -36,6 +36,7 @@ const AmbulatoryCardCard = (): JSX.Element => {
         setValue(tabName);
         history.push(`/ambulatory-card/${id}/${tabName}`)
     };
+
     return (
         <TabContext value={value}>
             <Paper classes={{ root: classes.paper }}>
@@ -49,7 +50,7 @@ const AmbulatoryCardCard = (): JSX.Element => {
                 </Tabs>
             </Paper>
             <TabPanel classes={{ root: classes.tabPanel }} value="description">
-                <FetchWrapper query={GET_AMBULATORY_CARD} queryParams={{id}}>
+                <FetchWrapper query={GET_AMBULATORY_CARD} queryParams={{ id }}>
                     <DescriptionTab />
                 </FetchWrapper>
             </TabPanel>

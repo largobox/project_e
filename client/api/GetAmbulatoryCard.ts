@@ -4,8 +4,11 @@ export default gql`
     query GetAmbulatoryCard($id: String!) {
         result: ambulatoryCard(id: $id) {
             id
-            fullName
+            name
+            surname
+            patronymic
             profession
+            fullName
             createdAt
             updatedAt
         }

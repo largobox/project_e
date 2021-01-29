@@ -52,7 +52,11 @@ const Left = (): JSX.Element => {
     })()
 
     const handleClose = () => navMenuIsOpenRV(false)
-    const handleMenuItemClick = (p: MenuItemType) => history.push(p.url)
+    const handleMenuItemClick = (p: MenuItemType) => {
+        if (history.location.pathname === p.url) return
+
+        history.push(p.url)
+    }
 
     return (
         <Drawer

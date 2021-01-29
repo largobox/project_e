@@ -40,9 +40,13 @@ const GridComponent: React.FC<Props> = (props) => {
     const pageLimit = 10
     const pageCount = Math.ceil(fetchData.totalCount / pageLimit)
     const classes = makeStyles({
-        toolsCont: {
+        topToolsCont: {
             display: 'flex',
             marginBottom: theme.spacing(1),
+            justifyContent: pageCount < 2 ? 'flex-end' : 'space-between',
+        },
+        bottomToolsCont: {
+            display: 'flex',
             justifyContent: pageCount < 2 ? 'flex-end' : 'space-between',
         },
         emptyText: {
@@ -56,11 +60,12 @@ const GridComponent: React.FC<Props> = (props) => {
     useEffect(() => {
         repeatQuery({ offset: (page - 1) * pageLimit, limit: pageLimit, sort: baseSort })
     }, [page])
-    console.log('fetchData: ', fetchData)
 
+    const currentRowFrom = page === 1 ? 1 : pageLimit * (page - 1) + 1
+    const currentRowTo =pageLimit * page < fetchData.totalCount ? pageLimit * page : fetchData.totalCount
     return (
         <React.Fragment>
-            <Box className={classes.toolsCont}>
+            <Box className={classes.topToolsCont}>
                 <Pagination
                     value={page}
                     setValue={setPage}
@@ -73,9 +78,9 @@ const GridComponent: React.FC<Props> = (props) => {
             <Header items={headers} />
             {
                 fetchData.items.length === 0 ?
-                <Typography classes={{root: classes.emptyText}}>Список пуст</Typography>
-                :
-                fetchData.items.map(item => <Item key={item.id} data={item} />)
+                    <Typography classes={{ root: classes.emptyText }}>Список пуст</Typography>
+                    :
+                    fetchData.items.map(item => <Item key={item.id} data={item} />)
             }
             <Box mt={1}>
                 <Pagination
@@ -83,6 +88,11 @@ const GridComponent: React.FC<Props> = (props) => {
                     setValue={setPage}
                     pageCount={pageCount}
                 />
+                <Box className={classes.bottomToolsCont}>
+                    <Typography>
+                        Строки: {currentRowFrom} - {currentRowTo} из {fetchData.totalCount}
+                    </Typography>
+                </Box>
             </Box>
         </React.Fragment>
     )

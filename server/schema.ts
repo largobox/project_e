@@ -9,10 +9,10 @@ export const typeDefs = gql(`
         name: String!
         surname: String!
         patronymic: String
-        createdAt: Int
-        updatedAt: Int
         fullName: String
         profession: String
+        createdAt: Int
+        updatedAt: Int
     }
 
     input AmbulatoryCardInput {
@@ -43,7 +43,8 @@ export const typeDefs = gql(`
     }
 
     type Mutation {
-        ambulatoryCardCreate(input: AmbulatoryCardInput): AmbulatoryCard
+        ambulatoryCardCreate(input: AmbulatoryCardInput!): Boolean!
+        ambulatoryCardUpdate(id: String!, input: AmbulatoryCardInput!): AmbulatoryCard!
         ambulatoryCardDelete(id: String!): Boolean!
     }
 `)
@@ -60,6 +61,9 @@ export const resolvers = {
     Mutation: {
         ambulatoryCardCreate: (_: any, params: {input: AmbulatoryCardInputI}) => {            
             return ambulatoryCardController.create(params.input)
+        },
+        ambulatoryCardUpdate: (_: any, params: {id: string, input: AmbulatoryCardInputI}) => {            
+            return ambulatoryCardController.update(params)
         },
         ambulatoryCardDelete: (_: any, params: {id: string}) => {
             return ambulatoryCardController.delete(params)
