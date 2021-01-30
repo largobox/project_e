@@ -3,7 +3,7 @@ type Props = {
     value: string | number
 }
 
-const DescriptionItemComponent = (props: Props): null => {
+const DescriptionItemComponent: React.FC<Props> = (props) => {
     return null
 }
 

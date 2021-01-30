@@ -1,18 +1,22 @@
 import * as React from 'react'
+import { PropsWithChildren } from 'react'
 import Grid from '@material-ui/core/Grid'
-import RemoveIcon from '@material-ui/icons/Remove'
 import Typography from '@material-ui/core/Typography'
 import Divider from '@material-ui/core/Divider'
 import Box from '@material-ui/core/Box'
 import { useTheme, makeStyles } from '@material-ui/core/styles';
+import { InvalidTypeError } from 'error';
+import DescriptionAreaComponent from 'core/description/area';
+import DescriptionItemComponent from 'core/description/item';
 
-type Props = {
-    children: JSX.Element | JSX.Element[]
+type TProps = {
     Toolbar?: React.FC
     tollbarProps?: object
 }
 
-const DescriptionComponent = (props: Props): JSX.Element => {
+type TColumn = React.FC<{side: 'left' | 'right'}>
+
+const DescriptionComponent: React.FC<PropsWithChildren<TProps>> = (props) => {
     const {
         children,
         Toolbar,
@@ -43,39 +47,35 @@ const DescriptionComponent = (props: Props): JSX.Element => {
         },
     })();
 
-    const Column = (props: { side: 'left' | 'right' }): JSX.Element => {
+    const Column: TColumn = (props) => {
         const { side } = props
 
         return (
             <React.Fragment>
                 {
-                    React.Children.map(children, child => {
-                        if (child.type.name !== 'DescriptionAreaComponent') {
-                            throw new Error('Error in DescriptionComponent. Child must be "DescriptionAreaComponent"')
+                    React.Children.map(children, (child: React.ReactElement) => {
+                        if (child.type !== DescriptionAreaComponent) {
+                            throw new InvalidTypeError(DescriptionComponent, DescriptionAreaComponent)
                         }
 
                         if (child.props.side !== side) return null
 
                         return (
                             <React.Fragment>
-                                <Typography variant='subtitle2' classes={{ root: classes.areaLabel }}>{child.props.label}</Typography>
+                                <Typography classes={{ root: classes.areaLabel }}>{child.props.label}</Typography>
                                 <Divider></Divider>
                                 {
                                     React.Children.map(child.props.children, child => {
-                                        if (child.type.name !== 'DescriptionItemComponent') {
-                                            throw new Error('Error in DescriptionComponent. Child must be "DescriptionItemComponent"')
+                                        if (child.type !== DescriptionItemComponent) {
+                                            throw new InvalidTypeError(DescriptionComponent, DescriptionItemComponent)
                                         }
 
                                         return (
                                             <Box className={classes.itemCont}>
-                                                <Typography
-                                                    variant='body2'
-                                                >
+                                                <Typography>
                                                     {child.props.label}:
                                                 </Typography>
-                                                <Typography
-                                                    variant='body2'
-                                                >
+                                                <Typography>
                                                     {
                                                         child.props.value === null ?
                                                             '\u2014'
@@ -98,7 +98,7 @@ const DescriptionComponent = (props: Props): JSX.Element => {
     return (
         <React.Fragment>
             <Box textAlign='right'>
-                <Toolbar {...tollbarProps}/>
+                <Toolbar {...tollbarProps} />
             </Box>
             <Grid spacing={6} container>
                 <Grid xs={6} item>
@@ -111,5 +111,7 @@ const DescriptionComponent = (props: Props): JSX.Element => {
         </React.Fragment>
     )
 }
+
+DescriptionComponent.displayName = 'DescriptionComponent'
 
 export default DescriptionComponent;

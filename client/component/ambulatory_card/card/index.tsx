@@ -1,61 +1,41 @@
 import * as React from 'react'
-import { useHistory } from 'react-router'
-import { useParams } from "react-router-dom";
-import Tabs from '@material-ui/core/Tabs';
-import Paper from '@material-ui/core/Paper';
-import Tab from '@material-ui/core/Tab';
+import { useParams } from "react-router";
+import TabContent from 'core/card/tab_content';
+import Card from 'core/card';
 import DescriptionIcon from '@material-ui/icons/Description';
-import EventNote from '@material-ui/icons/EventNote';
-import { useTheme, makeStyles } from '@material-ui/core/styles';
-import TabContext from '@material-ui/lab/TabContext';
-import TabPanel from '@material-ui/lab/TabPanel';
+import EventNoteIcon from '@material-ui/icons/EventNote';
 import DescriptionTab from './tab/description';
-import FetchWrapper from 'core/fetch_wrapper';
 import GET_AMBULATORY_CARD from 'api/GetAmbulatoryCard'
+import { MTab } from 'constant'
 
-const AmbulatoryCardCard = (): JSX.Element => {
-    const history = useHistory()
-    const { id, tab } = useParams<{ id: string, tab: string }>()
-    const [value, setValue] = React.useState(tab);
-    const theme = useTheme();
-    const classes = makeStyles({
-        paper: {
-            backgroundColor: theme.palette.primary.main,
-            color: theme.palette.primary.contrastText,
-        },
-        indicator: {
-            backgroundColor: theme.palette.secondary.light,
-        },
-        tabPanel: {
-            padding: 0,
-            paddingTop: theme.spacing(2),
-        }
-    })();
+type TParams = {
+    id: string
+}
 
-    const handleChange = (event: React.ChangeEvent, tabName: string) => {
-        setValue(tabName);
-        history.push(`/ambulatory-card/${id}/${tabName}`)
-    };
+const AmbulatoryCardCard: React.FC = () => {
+    const { id } = useParams<TParams>()
 
     return (
-        <TabContext value={value}>
-            <Paper classes={{ root: classes.paper }}>
-                <Tabs
-                    classes={{ indicator: classes.indicator }}
-                    value={value}
-                    onChange={handleChange}
-                >
-                    <Tab value='description' icon={<DescriptionIcon />} label="данные" />
-                    <Tab value='visits' icon={<EventNote />} label="приёмы" />
-                </Tabs>
-            </Paper>
-            <TabPanel classes={{ root: classes.tabPanel }} value="description">
-                <FetchWrapper query={GET_AMBULATORY_CARD} queryParams={{ id }}>
-                    <DescriptionTab />
-                </FetchWrapper>
-            </TabPanel>
-            <TabPanel classes={{ root: classes.tabPanel }} value="visits">visits</TabPanel>
-        </TabContext>
+        <Card
+            baseUrl={`/ambulatory-card/${id}`}
+        >
+            <TabContent
+                label={MTab.description.label}
+                name={MTab.description.name}
+                Icon={DescriptionIcon}
+                query={GET_AMBULATORY_CARD}
+                queryParams={{ id }}
+                Content={DescriptionTab}
+            />
+            <TabContent
+                label={MTab.visits.label}
+                name={MTab.visits.name}
+                Icon={EventNoteIcon}
+                query={GET_AMBULATORY_CARD}
+                queryParams={{ id }}
+                Content={() => <span>Visists</span>}
+            />
+        </Card>
     )
 }
 

@@ -4,7 +4,7 @@ type Props = {
     children: JSX.Element | JSX.Element[]
 }
 
-const DescriptionAreaComponent = (props: Props): null => {
+const DescriptionAreaComponent: React.FC<Props> = (props) => {
     return null
 }
 

@@ -17,7 +17,7 @@ const SimpleLayout: React.FC<Props> = (props) => {
         title,
         breadcrumbs,
     } = props
-
+    const breadcrumbsExist: boolean = breadcrumbs && breadcrumbs.length > 0
     const theme = useTheme()
     const classes = makeStyles({
         titleCont: {
@@ -28,13 +28,14 @@ const SimpleLayout: React.FC<Props> = (props) => {
             paddingBottom: theme.spacing(1),
             paddingRight: theme.spacing(2),
             marginBottom: theme.spacing(2),
+            marginTop: breadcrumbsExist ? theme.spacing(2) : theme.spacing(5),
         }
     })()
 
     return (
         <Box>
             {
-                breadcrumbs && breadcrumbs.length > 0 ?
+                breadcrumbsExist ?
                     <BreadcrumbComponent items={breadcrumbs} />
                     :
                     null

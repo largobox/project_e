@@ -16,7 +16,7 @@ const App = (): JSX.Element => {
         centerCont: {
             paddingLeft: theme.spacing(4) + (navMenuIsOpen ? 250 : 0),
             paddingRight: theme.spacing(4),
-            paddingTop: 59 + theme.spacing(4),
+            paddingTop: 59 + theme.spacing(2),
             paddingBottom: theme.spacing(4),
             transitionProperty: 'padding-left',
             transitionDuration: `0.${theme.transitions.duration.standard}s`,

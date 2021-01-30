@@ -19,9 +19,6 @@ const BreadcrumbComponent: React.FC<Props> = (props) => {
     const history = useHistory()    
     const theme = useTheme()
     const classes = makeStyles({
-        root: {
-            marginBottom: theme.spacing(4)
-        },
         linkedLabel: {
             color: theme.palette.primary.main,
             textDecoration: 'underline',
@@ -46,7 +43,6 @@ const BreadcrumbComponent: React.FC<Props> = (props) => {
 
     return (
         <Breadcrumbs
-            classes={{ root: classes.root }}
             separator={<NavigateNextIcon fontSize="small" />}
         >
             {
